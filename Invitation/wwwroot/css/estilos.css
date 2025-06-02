@@ -1,0 +1,751 @@
+/* Base Styles */
+:root {
+  --accent-color: #9daf80;
+  --accent-color-dark: #b5cb9d;
+  --accent-color-light: rgba(116, 163, 134, 0.1);
+  --text-muted: #737272;
+  --text-light-muted: #e6e6e5;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #555;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 500;
+}
+
+/* Text Colors */
+.text-accent {
+  color: var(--accent-color) !important;
+}
+
+.text-light-muted {
+  color: var(--text-light-muted);
+}
+
+/* Button Styles */
+.btn-accent {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.6rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+#sobre{
+    width: 50px;
+    justify-content: center;
+    align-items:center;
+    margin-bottom: 50px;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-color-dark);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    background-image: url("../images/ale_background.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    z-index: -1;
+}
+
+    .hero-section::before {
+        content: ""; /* obligatorio para que se muestre */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+
+        z-index: 1;
+    }
+
+    /* Asegura que el contenido esté por encima del fondo blanco */
+    .hero-section > * {
+        position: relative;
+        z-index: 2;
+    }
+
+.hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+.ale {
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+}
+    .hero-section .content {
+        position: relative;
+        z-index: 2;
+        text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+.hero-section h1 {
+  font-family: "Parisienne", cursive;
+  font-size: 6rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero-section .subtitle {
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: -10px;
+  margin-bottom: 2rem;
+}
+
+/* Divisor Image */
+.divisor-img {
+  width: 400px;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Hero Countdown Styles */
+.event-date-hero {
+  margin: 2rem 0 1rem 0;
+}
+
+.date-container-hero {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.1) 100%);
+  backdrop-filter: blur(10px);
+  color: white;
+  border-radius: 20px;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: hero-date-pulse 3s ease-in-out infinite;
+}
+
+.date-day-hero {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.date-month-year-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.date-month-hero {
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  line-height: 1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.date-year-hero {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 4px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-text-hero {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2rem !important;
+}
+
+/* Countdown Circles */
+.circle {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+  backdrop-filter: blur(10px);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  color: white;
+  background-color: var(--accent-color);
+  font-size: 1.6rem;
+  font-weight: 700;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  animation: hero-pulse 2s ease-in-out infinite alternate;
+}
+
+.label {
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Image Countdown Container */
+.image-countdown-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.ale-image-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, rgba(116, 163, 134, 0.1) 0%, rgba(116, 163, 134, 0.05) 100%);
+  border-radius: 50%;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(116, 163, 134, 0.2);
+}
+
+.ale-image {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.countdown-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Event Date Styles */
+.event-date {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.date-container {
+  background: linear-gradient(135deg, var(--accent-color) 0%, var(--accent-color-dark) 100%);
+  color: white;
+  border-radius: 15px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 8px 25px rgba(116, 163, 134, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 150px;
+  justify-content: center;
+}
+
+.date-day {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+  font-family: "Montserrat", sans-serif;
+}
+
+.date-month-year {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.date-month {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.date-year {
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Countdown Text */
+.countdown-text {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--accent-color);
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  z-index: 4;
+  margin: 0;
+}
+
+.countdown-section {
+  padding: 5rem 0;
+  background-image: url("../images/flowers.bg.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Parents Names */
+.parents-names {
+  font-family: "Great Vibes", cursive;
+  font-size: 2.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Section Titles */
+.section-title {
+  font-family: "Parisienne", cursive;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Flower Decorations */
+.flower-decoration {
+  position: absolute;
+  background-image: url("");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hero Section Flowers */
+.flower-top-left {
+  top: 2rem;
+  left: 2rem;
+  width: 8rem;
+  height: 8rem;
+  opacity: 0.3;
+  transform: rotate(12deg);
+}
+
+.flower-bottom-right {
+  bottom: 2rem;
+  right: 2rem;
+  width: 10rem;
+  height: 10rem;
+  opacity: 0.2;
+  transform: rotate(-12deg) scaleX(-1);
+}
+
+/* Introduction Section Flowers */
+.flower-intro {
+  top: 2rem;
+  right: 4rem;
+  width: 5rem;
+  height: 5rem;
+  opacity: 0.25;
+}
+
+/* Countdown Section Flowers */
+.flower-countdown-left {
+  top: 50%;
+  left: 1rem;
+  width: 6rem;
+  height: 6rem;
+  opacity: 0.2;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.flower-countdown-right {
+  top: 50%;
+  right: 1rem;
+  width: 6rem;
+  height: 6rem;
+  opacity: 0.2;
+  transform: translateY(-50%) rotate(-45deg) scaleX(-1);
+}
+
+/* RSVP Section Flowers */
+.flower-rsvp-left {
+  top: 2rem;
+  left: 2rem;
+  width: 10rem;
+  height: 10rem;
+  opacity: 0.1;
+  transform: rotate(12deg);
+}
+
+.flower-rsvp-right {
+  bottom: 2rem;
+  right: 2rem;
+  width: 10rem;
+  height: 10rem;
+  opacity: 0.1;
+  transform: rotate(-12deg) scaleX(-1);
+}
+
+.flower-rsvp-card {
+  top: -1.5rem;
+  left: 50%;
+  width: 5rem;
+  height: 5rem;
+  opacity: 0.6;
+  transform: translateX(-50%);
+}
+
+/* Small flower class */
+.flower-small {
+  width: 3rem !important;
+  height: 3rem !important;
+}
+
+/* Location Section */
+
+.location-circle {
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: -30px;
+}
+
+.location-circle:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.circle-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.circle-content h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.circle-content p {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* RSVP Section */
+.rsvp-section {
+  padding: 5rem 0;
+  background-image: url("images/rsvp-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.rsvp-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.rsvp-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.rsvp-card {
+  background-color: white;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Form Styles */
+.form-control,
+.form-select {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  background-color: white;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(116, 163, 134, 0.2);
+}
+
+.form-control::placeholder {
+  color: #aaa;
+}
+
+/* Animaciones de Scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.animate-on-scroll.animate-active {
+  opacity: 1;
+}
+
+/* Fade Up Animation */
+.animate-on-scroll[data-animation="fade-up"] {
+  transform: translateY(50px);
+}
+
+.animate-on-scroll[data-animation="fade-up"].animate-active {
+  transform: translateY(0);
+}
+
+/* Slide Up Animation */
+.animate-on-scroll[data-animation="slide-up"] {
+  transform: translateY(80px);
+}
+
+.animate-on-scroll[data-animation="slide-up"].animate-active {
+  transform: translateY(0);
+}
+
+/* Zoom In Animation */
+.animate-on-scroll[data-animation="zoom-in"] {
+  transform: scale(0.8);
+}
+
+.animate-on-scroll[data-animation="zoom-in"].animate-active {
+  transform: scale(1);
+}
+
+/* Float Animation para flores */
+.animate-on-scroll[data-animation="float"] {
+  transform: translateY(30px) rotate(0deg);
+}
+
+.animate-on-scroll[data-animation="float"].animate-active {
+  transform: translateY(0) rotate(12deg);
+  animation: gentle-float 6s ease-in-out infinite;
+}
+
+/* Animaciones */
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(12deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(15deg);
+  }
+}
+
+@keyframes hero-pulse {
+  0% {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+}
+
+@keyframes hero-date-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .flower-countdown-left,
+  .flower-countdown-right,
+  .flower-rsvp-left,
+  .flower-rsvp-right {
+    display: none;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero-section h1 {
+    font-size: 5rem;
+  }
+  .parents-names {
+    font-size: 2rem;
+  }
+  .flower-top-left,
+  .flower-bottom-right {
+    display: none;
+  }
+  .date-day-hero {
+    font-size: 2.5rem;
+  }
+  .date-month-hero {
+    font-size: 1.1rem;
+  }
+  .date-year-hero {
+    font-size: 1.3rem;
+  }
+  .circle {
+    width: 60px;
+    height: 60px;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 4rem;
+  }
+  .circle {
+    width: 55px;
+    height: 55px;
+    font-size: 1.2rem;
+  }
+  .label {
+    font-size: 0.75rem;
+  }
+  .rsvp-card {
+    padding: 2rem;
+  }
+  .date-container-hero {
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+  .date-day-hero {
+    font-size: 2rem;
+  }
+  .date-month-hero {
+    font-size: 1rem;
+  }
+  .date-year-hero {
+    font-size: 1.1rem;
+  }
+  .countdown-text-hero {
+    font-size: 1.2rem;
+  }
+  .flower-decoration {
+    display: none !important;
+  }
+  .animate-on-scroll {
+    transition: all 0.5s ease;
+  }
+  @keyframes gentle-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-5px);
+    }
+  }
+}
+
+/* En pantallas pequeñas: uno encima del otro */
+@media (max-width: 576px) {
+    .location-circles-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .location-circle {
+        width: 250px;
+        height: 250px;
+    }
+    #second-circle{
+        margin-top: 40px;
+    }
+
+    .circle-content {
+        width: 75%;
+        height: 75%;
+        text-align: center;
+    }
+
+        .circle-content h3 {
+            font-size: 1rem;
+        }
+
+        .circle-content p {
+            font-size: 0.8rem;
+        }
+}
+/* Respetar preferencias de usuario para animaciones reducidas */
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll,
+  .animate-on-scroll * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
